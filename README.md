@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+![Node.js Version](https://img.shields.io/badge/node.js-v20.0-green.svg)
+![ReactJS](https://img.shields.io/badge/ReactJS-20232A?logo=react)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-ff9900)
+![AWS SNS](https://img.shields.io/badge/AWS-SNS-orange)
+![Terraform](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AutoSort: Automated File Management and Organization System on AWS
+This project, which automates the process of uploading files to an S3 bucket and then sorts these files into different folders based on their file type using a Lambda function, addresses several practical problems and streamlines workflows for businesses or individual users. Here's how it solves specific challenges:
 
-## Available Scripts
+### Automated File Organization
 
-In the project directory, you can run:
+- **Problem Solved**: Manual sorting of files is time-consuming and prone to human error. This is especially cumbersome for organizations dealing with large volumes of documents, images, or datasets.
+- **How This Project Helps**: Automatically sorting files by type upon upload reduces manual labor, enhances accuracy, and improves efficiency in managing digital assets.
 
-### `npm start`
+### Efficient Data Management
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Problem Solved**: Without proper organization, finding specific files in a large bucket can be like searching for a needle in a haystack, leading to wasted time and frustration.
+- **How This Project Helps**: By automatically organizing files into predefined folders based on their type, this project facilitates easier navigation, retrieval, and management of stored data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Scalable Uploads and Processing
 
-### `npm test`
+- **Problem Solved**: Scaling file uploads and processing manually is inefficient and can become increasingly complex as the volume of data grows.
+- **How This Project Helps**: The use of AWS services (S3 for storage and Lambda for processing) allows the system to scale automatically, handling increases in data volume seamlessly without the need for manual intervention.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Cost and Resource Efficiency
 
-### `npm run build`
+- **Problem Solved**: Running dedicated servers or manual sorting processes for file management can be costly and resource-intensive.
+- **How This Project Helps**: Serverless computing models, like AWS Lambda, offer a pay-as-you-go pricing model, which can be more cost-effective than traditional server-based solutions. Moreover, automating the sorting process reduces the need for dedicated human resources for file management tasks.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Enhanced Accessibility and Collaboration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Problem Solved**: Collaborative environments often suffer from disorganized data storage, making it difficult for team members to access and share the files they need.
+- **How This Project Helps**: Organized data storage ensures that team members can quickly find and access files relevant to their tasks, facilitating smoother collaboration and productivity.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Improved Data Processing Workflows
 
-### `npm run eject`
+- **Problem Solved**: Processing different types of files often requires specific actions or workflows. Without organization, automating these workflows can be challenging.
+- **How This Project Helps**: Sorting files into folders based on type can act as a precursor to more complex processing workflows. For instance, text files could be automatically sent through a text processing pipeline, while images could go through a different workflow for analysis or transformation.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Conclusion
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project leverages AWS S3 for robust and scalable storage solutions, along with AWS Lambda for efficient, serverless computing. The automation of file uploads and sorting based on file types addresses key challenges in file management and data processing, making it a valuable solution for businesses and individual users looking to optimize their digital asset management and processing workflows.
