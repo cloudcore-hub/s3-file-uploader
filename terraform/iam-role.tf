@@ -1,17 +1,15 @@
-resource "aws_iam_role" "iam-role" {
-  name               = var.iam-role
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "ec2.amazonaws.com"
+resource "aws_iam_role" "lambda_exec_role" {
+  name               = "${var.s3_bucket_prefix}-lambda-exec-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+        Action = "sts:AssumeRole"
       },
-      "Action": "sts:AssumeRole"
-    }
-  ]
-}
-EOF
+    ]
+  })
 }

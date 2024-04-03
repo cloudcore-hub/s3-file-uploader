@@ -1,67 +1,35 @@
 variable "region" {
   description = "AWS region"
-  type = string
-  default = "us-east-1"
-}
-
-variable "vpc-name" {
-  description = "VPC Name for our Jumphost server"
-  type = string
-  default = "Jumphost-vpc"
-}
-
-variable "igw-name" {
-  description = "Internet Gate Way Name for our Jumphost server"
-  type = string
-  default = "Jumphost-igw"
-}
-
-variable "subnet-name" {
-  description = "Subnet Name for our Jumphost server"
-  type = string
-  default = "Jumphost-subnet"
-}
-
-variable "rt-name" {
-  description = "Route Table Name for our Jumphost server"
-  type = string
-  default = "Jumphost-rt"
-}
-
-variable "sg-name" {
-  description = "Security Group for our Jumphost server"
-  type = string
-  default = "Jumphost-sg"
-}
-
-
-variable "iam-role" {
-  description = "IAM Role for the Jumphost Server"
-  type = string
-  default = "Jumphost-iam-role"
-}
-
-variable "ami_id" {
-  description = "AMI ID for the EC2 instance"
   type        = string
-  default     = "ami-0c7217cdde317cfec" // Replace with the latest AMI ID for your region
+  default     = "us-east-1"
 }
 
-variable "instance_type" {
-  description = "EC2 instance type"
+variable "s3_bucket_prefix" {
+  description = "The prefix name of the S3 buckets for uploads and processed files"
   type        = string
-  default     = "t2.large"
+  default     = "cloudcore-s3-file"
 }
 
-variable "key_name" {
-  description = "EC2 keypair"
+variable "lambda_function_name" {
+  description = "The name of the Lambda function for processing uploads"
   type        = string
-  default     = "gitopskey"
+  default     = "file_processing_function"
 }
 
-variable "instance_name" {
-  description = "EC2 Instance name for the jumphost server"
+variable "lambda_handler" {
+  description = "The handler for the Lambda function"
   type        = string
-  default     = "Jumphost-server"
+  default     = "lambda_function.lambda_handler"
 }
-#
+
+variable "lambda_runtime" {
+  description = "The runtime for the Lambda function"
+  type        = string
+  default     = "python3.11"
+}
+
+variable "lambda_source_file" {
+  description = "Path to the Lambda function's source code zip file"
+  type        = string
+  default     = "../lambda/lambda_function_payload.zip"
+}
