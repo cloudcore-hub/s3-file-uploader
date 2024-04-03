@@ -24,6 +24,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    # Add a step to package the Lambda function
+    - name: Package Lambda Function
+      run: |
+        cd ../lambda
+        zip -r9 lambda_function_payload.zip lambda_function.py
+        mv lambda_function_payload.zip ../terraform/
+        cd ../terraform
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
@@ -45,4 +53,4 @@ jobs:
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false -parallelism=1
+      run: terraform apply -auto-approve -input=false 
