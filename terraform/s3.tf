@@ -3,10 +3,6 @@ resource "aws_s3_bucket" "bucket_in" {
   bucket = "${var.s3_bucket_prefix}-in"
 }
 
-resource "aws_s3_bucket_acl" "bucket_in_acl" {
-  bucket = aws_s3_bucket.bucket_in.id
-  acl    = "private"
-}
 
 resource "aws_s3_bucket_versioning" "bucket_in_versioning" {
   bucket = aws_s3_bucket.bucket_in.id
@@ -33,10 +29,6 @@ resource "aws_s3_bucket" "bucket_out" {
   bucket = "${var.s3_bucket_prefix}-out"
 }
 
-resource "aws_s3_bucket_acl" "bucket_out_acl" {
-  bucket = aws_s3_bucket.bucket_out.id
-  acl    = "private"
-}
 
 resource "aws_s3_bucket_versioning" "bucket_out_versioning" {
   bucket = aws_s3_bucket.bucket_out.id
