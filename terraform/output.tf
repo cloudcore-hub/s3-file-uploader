@@ -1,5 +1,9 @@
-output "s3_bucket_name" {
-  value = aws_s3_bucket.upload_bucket
+output "s3_bucket_in_name" {
+  value = aws_s3_bucket.bucket_in.id
+}
+
+output "s3_bucket_out_name" {
+  value = aws_s3_bucket.bucket_out.id
 }
 
 output "lambda_function_name" {
@@ -11,5 +15,6 @@ output "lambda_function_arn" {
 }
 
 output "iam_role_arn" {
-  value = aws_iam_role.iam-role.arn
+  value = aws_iam_role.lambda_exec_role.arn
 }
+
