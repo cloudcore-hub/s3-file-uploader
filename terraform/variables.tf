@@ -31,5 +31,5 @@ variable "lambda_runtime" {
 variable "lambda_source_file" {
   description = "Path to the Lambda function's source code zip file"
   type        = string
-  default     = "../lambda_function_payload.zip"
+  default     = "./lambda_function_payload.zip"
 }
