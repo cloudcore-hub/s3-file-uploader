@@ -4,14 +4,6 @@ resource "aws_s3_bucket" "bucket_in" {
 }
 
 
-resource "aws_s3_bucket_versioning" "bucket_in_versioning" {
-  bucket = aws_s3_bucket.bucket_in.id
-
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
-
 resource "aws_s3_bucket_cors_configuration" "bucket_in_cors" {
   bucket = aws_s3_bucket.bucket_in.id
 
@@ -29,14 +21,6 @@ resource "aws_s3_bucket" "bucket_out" {
   bucket = "${var.s3_bucket_prefix}-out"
 }
 
-
-resource "aws_s3_bucket_versioning" "bucket_out_versioning" {
-  bucket = aws_s3_bucket.bucket_out.id
-
-  versioning_configuration {
-    status = "Enabled"
-  }
-}
 
 resource "aws_s3_bucket_cors_configuration" "bucket_out_cors" {
   bucket = aws_s3_bucket.bucket_out.id

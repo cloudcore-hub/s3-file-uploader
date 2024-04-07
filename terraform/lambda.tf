@@ -6,4 +6,5 @@ resource "aws_lambda_function" "file_processing_function" {
 
   filename         = var.lambda_source_file
   source_code_hash = filebase64sha256(var.lambda_source_file)
+  # source_code_hash = "placeholder"
 }
