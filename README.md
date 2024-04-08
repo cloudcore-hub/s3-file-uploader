@@ -10,11 +10,24 @@
 
 This project sets up an AWS infrastructure to automatically process and sort uploaded files into designated folders based on their file extensions. It leverages AWS S3, AWS Lambda, and Terraform for infrastructure setup and management. Additionally, it provides a ReactJS frontend application for users to upload files to AWS S3.
 
+
+## Project Overview
+Step 1: Git clone and code review
+Step 2: AWS IAM role and CLI access
+Step 3: Terraform cloud account setup 
+Step 4: Infrastructure as Code (IaC) using Terraform 
+Step 5: Github Actions pipeline
+Step 6: Push code and verify resources
+Step 7: Start app locally, test application and verify
+Step 8: Clean up 
+
+
+
 ## Architecture Overview
 
 The system consists of the following components:
 - **Two AWS S3 Buckets**: One for incoming uploads (`bucket-in`) and one for sorted files (`bucket-out`).
-- **AWS Lambda Function**: Triggered by file uploads to `bucket-in`, processes each file and sorts it into `bucket-out` based on its extension.
+- **AWS Lambda Function**: Triggered by file uploads to `bucket-in`, processes each file and sorts it into folders `bucket-out` based on the file extension.
 - **ReactJS Frontend**: A simple web application allowing users to upload files to `bucket-in`.
 - **Terraform**: Used to provision and manage AWS resources.
 
@@ -205,6 +218,46 @@ Here's how this solves specific challenges:
 
 - **Problem Solved**: Processing different types of files often requires specific actions or workflows. Without organization, automating these workflows can be challenging.
 - **How This Project Helps**: Sorting files into folders based on type can act as a precursor to more complex processing workflows. For instance, text files could be automatically sent through a text processing pipeline, while images could go through a different workflow for analysis or transformation.
+
+
+### Resources Clean-up using Terraform
+
+#### Prepare the files
+
+Comment this line in `lambda.tf` file 
+`source_code_hash = filebase64sha256(var.lambda_source_file)`
+
+Add this line to the file 
+`source_code_hash = "placeholder"`
+
+#### Delete the contents in the S3 bucket  
+
+Be sure you have awscli in setup locally.
+
+run `aws s3 rm s3://<bucket-name> --recursive`
+```
+aws s3 rm s3://cloudcore-s3-file-in --recursive
+aws s3 rm s3://cloudcore-s3-file-out --recursive
+```
+
+```
+terraform login
+```
+ Type in `yes` and paste the token from Terraform Cloud
+
+ cd into the the folder with the terraform file `/terraform`
+
+ Run 
+ ```
+ terraform init
+ ```
+
+then 
+
+```
+terraform destroy -auto-approve
+```
+
 
 ### Conclusion
 

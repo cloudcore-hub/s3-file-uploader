@@ -7,8 +7,10 @@ def lambda_handler(event, context):
     # Define supported file extensions and their corresponding output paths
     supported_extensions = {
         '.txt': 'txt/',
+        '.docx': 'docx/',
         '.pdf': 'pdf/',
         '.csv': 'csv/',
+        '.png': 'png/',
     }
 
     for record in event['Records']:
