@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'; 
 import AWS from 'aws-sdk';
+import './App.css';
 
 // Environment variables
 const S3_BUCKET = process.env.REACT_APP_AWS_S3_BUCKET;

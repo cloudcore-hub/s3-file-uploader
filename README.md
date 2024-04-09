@@ -12,15 +12,14 @@ This project sets up an AWS infrastructure to automatically process and sort upl
 
 
 ## Project Overview
-Step 1: Git clone and code review
-Step 2: AWS IAM role and CLI access
-Step 3: Terraform cloud account setup 
-Step 4: Infrastructure as Code (IaC) using Terraform 
-Step 5: Github Actions pipeline
-Step 6: Push code and verify resources
-Step 7: Start app locally, test application and verify
-Step 8: Clean up 
-
+- Step 1: Git clone and code review
+- Step 2: AWS IAM role and CLI access
+- Step 3: Terraform cloud account setup 
+- Step 4: Infrastructure as Code (IaC) using Terraform 
+- Step 5: Github Actions pipeline
+- Step 6: Push code and verify resources
+- Step 7: Start app locally, test application and verify
+- Step 8: Clean up 
 
 
 ## Architecture Overview
@@ -32,94 +31,6 @@ The system consists of the following components:
 - **Terraform**: Used to provision and manage AWS resources.
 
 ![Architecture Diagram](link-to-diagram-if-available)
-
-## Prerequisites
-
-Before you begin, ensure you have the following:
-- An AWS Account
-- Terraform installed on your local machine
-- Node.js and npm installed (for the React frontend)
-- AWS CLI configured (optional, for local testing)
-
-## Setup and Deployment
-
-### Infrastructure with Terraform
-
-1. **Initialize Terraform**:
-Navigate to the `terraform` directory and run:
-   ```
-   terraform init
-   ```
-
-2. **Plan Terraform Deployment**:
-Review the changes Terraform will make:
-   ```
-   terraform plan
-   ```
-
-3. **Apply Terraform Configuration**:
-Deploy your AWS infrastructure:
-   ```
-   terraform apply
-   ```
-
-### Configuring the ReactJS Frontend
-
-1. **Install Dependencies**:
-Navigate to the frontend directory and install npm packages:
-   ```
-   cd path/to/frontend
-   npm install
-   ```
-
-2. **Environment Variables**:
-Configure the necessary environment variables in `.env` file (e.g., `REACT_APP_S3_BUCKET_NAME` for `bucket-in`).
-
-3. **Run the Frontend Locally**:
-   ```
-   npm start
-   ```
-
-4. **Build and Deploy**:
-Build the production version and deploy as per your hosting solution:
-   ```
-   npm run build
-   ```
-
-## Usage
-
-To upload files:
-1. Access the ReactJS frontend via its URL.
-2. Select files to upload.
-3. Uploaded files are automatically processed and sorted by the AWS Lambda function.
-
-## Maintenance and Monitoring
-
-- **AWS CloudWatch**: Monitor Lambda function logs and S3 access logs.
-- **Terraform State Management**: Use Terraform Cloud or a secure location for state files.
-
-## Contributing
-
-Contributions are welcome! Please read our [Contributing Guide](link-to-contributing-guide) for more information.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- AWS Documentation
-- Terraform Documentation
-- React Documentation
-
-### Notes:
-- Replace placeholders (like `path/to/frontend`, `link-to-diagram-if-available`, `link-to-contributing-guide`) with actual paths or URLs relevant to your project.
-- The `.env` file for the React app should not be committed to version control if it contains sensitive information. Instead, include a `.env.example` file with dummy values as a template.
-- This README assumes a certain level of familiarity with AWS, Terraform, and ReactJS. Adjust the complexity of the instructions based on the target audience's expected expertise.
-
-
-
-
 
 
 # AutoSort: Automated File Management and Organization System on AWS
@@ -170,7 +81,7 @@ You can verify the installations by running `node -v` and `npm -v` in your termi
    Launch the development server with:
 
    ```
-   npm start
+   npm run dev
    ```
 
    This command starts a local web server and opens the app in your default web browser. The development server watches for changes to your source code, so you can see updates in real-time as you develop.
