@@ -28,7 +28,7 @@ jobs:
       run: |
         cd ../lambda
         zip -r9 lambda_function_payload.zip lambda_function.py
-        mv lambda_function_payload.zip ../terraform/
+        mv lambda_function_payload.zip ../terraform
         cd ../terraform
 
     - name: Setup Terraform
