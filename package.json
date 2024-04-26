@@ -15,7 +15,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider nodemon --exec 'react-scripts start'"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider nodemon --exec 'react-scripts start'"
   },
   "eslintConfig": {
     "extends": [
