@@ -6,10 +6,10 @@ terraform {
       }
     }
   backend "remote" {
-    organization = "cloudcore-hub"
+    organization = "Christyl-new"
 
     workspaces {
-      name = "s3-uploader"
+      name = "s3-uploader-new"
     }
   }
   required_version = ">=1.6.3"
