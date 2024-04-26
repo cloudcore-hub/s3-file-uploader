@@ -6,7 +6,7 @@ terraform {
       }
     }
   backend "remote" {
-    organization = "cloudcore-hub"
+    organization = "Christyl"
 
     workspaces {
       name = "s3-uploader"
