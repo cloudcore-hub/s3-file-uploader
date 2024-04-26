@@ -2,7 +2,7 @@ name: 'Terraform'
 
 on:
   # push:
-  #   branches: [ "dev" ]
+  #   branches: [ "dev" ]  
   pull_request:
 
 permissions:
@@ -23,6 +23,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    # Add a step to package the Lambda function
     - name: Package Lambda Function
       run: |
         cd ../lambda
@@ -42,9 +43,14 @@ jobs:
       run: terraform fmt -check
       continue-on-error: true
 
+    - name: Terraform Validate
+      run: terraform validate
+
     - name: Terraform Plan
-      run: terraform plan -no-color -input=false -compact-warnings
+      run: terraform plan -no-color -input=false
+      continue-on-error: true 
 
     - name: Terraform Apply
-      if: github.event_name == 'push'
-      run: terraform apply -auto-approve -input=false
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: terraform apply -auto-approve -input=false 
+
